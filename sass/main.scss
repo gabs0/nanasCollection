@@ -1,0 +1,13 @@
+@import './base/tipografia';
+@import './base/colors';
+@import './layout/header';
+@import './layout/footer';
+@import './layout/section';
+@import './layout/forms';
+@import './components/buttons';
+@import './views/home';
+@import './views/buy';
+
+*{
+    scroll-behavior: smooth;
+}

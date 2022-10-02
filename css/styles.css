@@ -1,0 +1,793 @@
+/*tipografia*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap");
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+/*tipografia*/
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+.header {
+  box-sizing: border-box;
+}
+.header .header__nav {
+  text-align: right;
+  margin-right: 0.5rem;
+}
+.header .header__nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header .header__nav ul li a {
+  margin: 0.9rem;
+  text-decoration: none;
+}
+.header .header__nav ul li button#btnCarrito img {
+  width: 1.3rem;
+  height: auto;
+}
+
+/*tipografia*/
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+.footer .footer__div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/*tipografia*/
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+section, .section--nana, .section--home, .section--about, .section--buy {
+  display: flex;
+  flex-direction: column;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+/*tipografia*/
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+.modal {
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 17, 17, 0.7411764706);
+  transition: opacity 0.5s;
+}
+.modal--close {
+  text-decoration: none;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+.modal--close img {
+  float: right;
+  margin-left: 23rem;
+  width: 1rem;
+}
+.modal--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.3s;
+}
+.modal .container--modal {
+  background-color: #bdbdbd;
+  width: 90%;
+  max-width: 25rem;
+  max-height: 90%;
+  margin: auto;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  border-radius: 10px;
+}
+.modal .container--modal form {
+  flex-direction: column;
+  align-items: center;
+}
+.modal .container--modal form h3 {
+  text-align: center;
+}
+.modal .container--modal form .div__input {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo valor" "aviso aviso";
+  margin: 0.8rem;
+}
+.modal .container--modal form .div__input label.logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+}
+.modal .container--modal form .div__input label.logo img {
+  padding-top: 0.3rem;
+}
+.modal .container--modal form .div__input input {
+  border-radius: 10px;
+  width: 19rem;
+  height: 1.2rem;
+  padding: 0.5rem;
+  border-style: none;
+  background-color: rgba(234, 234, 234, 0.9137254902);
+  margin: 0.5rem;
+}
+.modal .container--modal form .div__input input:focus {
+  transition: all 0.02s;
+  outline-color: #DFDFDF;
+}
+.modal .container--modal form .div__input small.aviso {
+  grid-area: aviso;
+  font-size: 0.8rem;
+  color: rgb(45, 45, 45);
+  margin-left: 3.5rem;
+}
+.modal .container--modal form .div__input.falla input {
+  border: 0.5px solid;
+  border-color: brown;
+}
+.modal .container--modal form .div__input.correcto input {
+  border: 0.5px solid;
+  border-color: seagreen;
+}
+
+.hide {
+  display: none;
+}
+
+/*tipografia*/
+h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  text-align: center;
+}
+
+small {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Syne", sans-serif;
+  font-size: 0.9rem;
+}
+
+a, input, p, li {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.95rem;
+}
+
+p.precio {
+  font-size: 0.9rem;
+}
+
+button {
+  font-size: 0.82rem;
+}
+
+/*paleta de colores*/
+/*nana osaki*/
+/*nana komatsu*/
+/*ren*/
+/*nobu*/
+/*yasu*/
+/*shin*/
+/*extras*/
+h1, h2, small {
+  color: #000000;
+}
+
+nav a {
+  color: #474747;
+}
+
+section .section__div--busqueda .search, .section--nana .section__div--busqueda .search, .section--home .section__div--busqueda .search, .section--about .section__div--busqueda .search, .section--buy .section__div--busqueda .search {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  height: 35px;
+  background-color: #DFDFDF;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+}
+section .section__div--busqueda .search img, .section--nana .section__div--busqueda .search img, .section--home .section__div--busqueda .search img, .section--about .section__div--busqueda .search img, .section--buy .section__div--busqueda .search img {
+  width: 15px;
+  text-align: center;
+}
+section .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button, .section--nana .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button, .section--home .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button, .section--about .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button, .section--buy .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button {
+  background-color: #A62349;
+  border-style: none;
+  border-radius: 7px;
+  color: #ffffff;
+  width: auto;
+  padding: 0.35rem;
+  margin: 0.5rem;
+}
+section .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button:hover, .section--nana .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button:hover, .section--home .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button:hover, .section--about .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button:hover, .section--buy .section__gridContainer .section__div--productos .section__div--cards .cardProducto .card--detalle .btn--buy button:hover {
+  background-color: #DFDFDF;
+  color: #474747;
+  transition: all 0.4s;
+  border-width: 3px #474747;
+}
+
+.container--modal .botones {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.container--modal .botones button {
+  margin: 0 0.8rem;
+  align-items: center;
+  background-color: #DFDFDF;
+  color: #474747;
+  border-style: none;
+  border-radius: 7px;
+  width: auto;
+  padding: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+.container--modal .botones button:active {
+  background-color: #A62349;
+  color: #DFDFDF;
+  border-width: 3px #474747;
+}
+.container--modal .item .botonesCant button {
+  height: 2rem;
+  width: auto;
+  align-items: center;
+  background-color: #DFDFDF;
+  color: #474747;
+  border-style: none;
+}
+.container--modal .item .botonesCant button img {
+  padding: 0.5rem 0 0.2rem;
+  height: 1rem;
+  width: 1rem;
+}
+.container--modal .item .botonesCant button#btnQuitar {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.container--modal .item .botonesCant button#btnQuitar:active {
+  transition: 0.2s all;
+  background-color: rgb(142, 145, 149);
+}
+.container--modal .item .botonesCant button#btnAgregar {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.container--modal .item .botonesCant button#btnAgregar:active {
+  transition: 0.2s all;
+  background-color: #A62349;
+}
+.container--modal .item button.botonAgregar {
+  width: 40%;
+  height: 2rem;
+  border-style: none;
+  border-radius: 7px;
+}
+.container--modal .item button.botonAgregar:active {
+  transition: 0.2s all;
+  background-color: #A62349;
+  color: #DFDFDF;
+}
+.container--modal button#btnFinalizarCompra {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #A62349;
+  color: #DFDFDF;
+  border-style: none;
+  border-radius: 7px;
+}
+.container--modal button#btnFinalizarCompra:active {
+  transition: 0.2s all;
+  border: 0.8px solid;
+  border-color: #DFDFDF;
+}
+.container--modal button.btn--eliminarItem {
+  background-color: #A62349;
+  border-style: none;
+  border-radius: 7px;
+  width: 2.2rem;
+  margin: 1.2rem;
+}
+.container--modal button.btn--eliminarItem:active {
+  transition: 0.3s all;
+  background-color: rgba(166, 35, 72, 0.6196078431);
+  outline-style: none;
+}
+
+.header .header__nav ul li button#btnCarrito {
+  background-color: rgba(230, 173, 67, 0);
+  border-style: none;
+  border-radius: 60px;
+  height: 2rem;
+  width: 2rem;
+  padding: 0.1rem;
+}
+.header .header__nav ul li button#btnCarrito img {
+  width: 1.2rem;
+}
+.header .header__nav ul li button#btnCarrito:active {
+  background-color: rgba(129, 129, 129, 0.744);
+}
+
+.section--nana .galeria {
+  display: flex;
+  justify-content: center;
+}
+.section--nana .galeria img {
+  height: 40rem;
+  width: auto;
+}
+
+.section__div--busqueda {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.section__div--busqueda .buscar {
+  align-self: baseline;
+  width: 350px;
+  height: 35px;
+  padding: 0.2rem 0.5rem;
+  border-style: none;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.section--home .galeria {
+  display: flex;
+  justify-content: center;
+}
+.section--home .galeria img {
+  height: 40rem;
+  width: auto;
+}
+
+.section--about .galeria {
+  display: flex;
+  justify-content: center;
+}
+.section--about .galeria img {
+  height: 40rem;
+  width: auto;
+}
+
+.section__gridContainer {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-gap: 0.5rem;
+}
+.section__gridContainer .section__div--menuCompras {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 200px;
+  height: auto;
+  background-color: #ffffff;
+  padding: 0.5rem;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 3;
+  grid-column-end: 2;
+}
+.section__gridContainer .section__div--menuCompras .section__nav--menuCompras .section__nav--productos {
+  list-style: none;
+  padding: 0.6rem;
+}
+.section__gridContainer .section__div--menuCompras .section__nav--menuCompras .section__nav--productos li {
+  padding: 0.2rem;
+}
+.section__gridContainer .section__div--menuCompras .section__nav--menuCompras .section__nav--productos li a {
+  text-decoration: none;
+}
+.section__gridContainer .section__div--menuCompras .section__nav--menuCompras .section__nav--productos li a:hover {
+  background-color: #DFDFDF;
+  width: 200px;
+}
+.section__gridContainer .section__div--menuCompras .section__nav--menuCompras .section__nav--productos li ul {
+  padding: 0.4rem;
+  list-style: none;
+  padding-left: 0.98rem;
+}
+
+.section__div--runway {
+  display: flex;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-end: 3;
+  grid-column-end: 11;
+}
+.section__div--runway img {
+  width: auto;
+  height: 30em;
+}
+
+.section__div--productos {
+  grid-row-start: 3;
+  grid-column-start: 2;
+  grid-row-end: 7;
+  grid-column-end: 12;
+}
+.section__div--productos .section__div--cards {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.section__div--productos .section__div--cards .cardProducto {
+  text-align: center;
+  width: 250px;
+  height: 370px;
+  background-color: #DFDFDF;
+  border-radius: 15px;
+  margin: 1rem;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.section__div--productos .section__div--cards .cardProducto img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 170px;
+  height: auto;
+  border-radius: 15px;
+}
+.section__div--productos .section__div--cards .cardProducto .card--detalle {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+.section__div--productos .section__div--cards .cardProducto .card--detalle h4 {
+  margin: 0.2rem;
+}
+.section__div--productos .section__div--cards .cardProducto .card--detalle p {
+  margin: 0.1rem;
+}
+
+.modal .container--modal {
+  background-color: #bdbdbd;
+}
+.modal .container--modal .item {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 0.5fr 0.5fr;
+  grid-gap: 0px;
+  grid-template-areas: "articulo descripcionItem" "articulo botonesCant" "botonAgregar botonAgregar";
+}
+.modal .container--modal .item img.articulo {
+  grid-area: articulo;
+  border-radius: 7px;
+  width: 9.2rem;
+  height: auto;
+  margin: 1.8rem 0.9rem 0.9rem;
+}
+.modal .container--modal .item .descripcionItem {
+  grid-area: descripcionItem;
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+.modal .container--modal .item .botonesCant {
+  grid-area: botonesCant;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.2rem;
+}
+.modal .container--modal .item .botonesCant input {
+  width: 18%;
+  height: 1.9rem;
+  border: none;
+  outline: none;
+  padding-left: 0.8rem;
+}
+.modal .container--modal .item .botonAgregar {
+  grid-area: botonAgregar;
+  align-self: center;
+  justify-self: center;
+}
+.modal .container--modal .item small#mensajeDisponibilidad {
+  font-size: 0.8rem;
+  text-align: right;
+}
+.modal .container--modal #modalBody {
+  overflow-y: auto;
+  max-height: 25rem;
+}
+.modal .container--modal #modalBody .cardProducto {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: 0.8px solid #A62349;
+  border-radius: 7px;
+  margin: 1rem 0.5rem;
+}
+.modal .container--modal #modalBody .cardProducto img.itemComprado {
+  border-radius: 7px;
+  width: 9rem;
+  height: auto;
+  padding: 1rem;
+}
+.modal .container--modal .modal--total h4#agradecimiento {
+  margin-bottom: 2.8rem;
+}
+.modal .container--modal .modal--total p {
+  margin: 0.8rem;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/*# sourceMappingURL=styles.css.map */

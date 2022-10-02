@@ -1,0 +1,40 @@
+/*tipografia*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap');
+
+$titulos: 'Syne', sans-serif;
+$textos: 'Source Sans Pro', sans-serif;
+
+h1{
+    font-family: $titulos;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+small{
+    font-family: $textos;
+    font-size: 0.9rem;
+}
+
+h3{
+    font-family: $titulos;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h4{
+    font-family: $titulos;
+    font-size: 0.9rem;
+}
+
+a, input,p,li{
+    font-family:$textos;
+    font-size: 0.95rem;
+}
+
+p.precio{
+    font-size: 0.9rem;
+}
+
+button{
+    font-size: 0.82rem;
+}

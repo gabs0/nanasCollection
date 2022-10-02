@@ -1,0 +1,33 @@
+@import '../base/tipografia';
+@import '../base/colors';
+
+.header{
+    box-sizing: border-box;
+    
+    .header__nav{
+        text-align: right;
+        margin-right: 0.5rem;
+        ul{
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            li{
+                
+                a{
+                    margin: 0.9rem;
+                    text-decoration: none;
+                }
+
+                button#btnCarrito{
+                    img{
+                        width: 1.3rem;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        
+    }
+}

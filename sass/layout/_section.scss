@@ -1,0 +1,11 @@
+@import '../base/tipografia';
+@import '../base/colors';
+
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+.section--nana, .section--home, .section--about, .section--buy{
+    @extend section;
+}

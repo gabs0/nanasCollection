@@ -1,0 +1,180 @@
+@import '../base/tipografia';
+@import '../base/colors';
+
+section{
+    .section__div--busqueda{
+        .search{
+            display: flex;
+            align-items: center;
+            padding: 0.2rem 0.5rem;
+            height: 35px;
+            background-color: map-get($colors , "color2");
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            cursor: pointer;
+            img{
+                width: 15px;
+                text-align: center;
+            }
+        }
+    }
+
+    .section__gridContainer{
+        .section__div--productos{
+            .section__div--cards{
+                .cardProducto{
+                    .card--detalle{
+                        //btn compra
+                        .btn--buy{
+                            button{
+                                background-color: map-get($colors, "color21" );
+                                border-style: none;
+                                border-radius: 7px;
+                                color: #ffffff;
+                                width: auto;
+                                padding: 0.35rem;
+                                margin: 0.5rem;
+
+                                &:hover{
+                                    background-color: map-get($colors, "color2" );
+                                    color:map-get($colors, "color1");
+                                    transition: all 0.4s;
+                                    border-width: 3px map-get($colors, "color1");;
+                                }
+                            }
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container--modal{
+    .botones{
+        display: flex;
+        justify-content: center;
+        margin: 0.5rem;
+
+        button{
+            margin: 0 0.8rem;
+            align-items: center;
+            background-color: map-get($colors, "color2" );
+            color:map-get($colors, "color1");
+            border-style: none;
+            border-radius: 7px;
+            width: auto;
+            padding: 0.3rem;
+            margin-bottom: 0.6rem;
+            
+            &:active{
+                background-color: map-get($colors, "color21" );
+                color:map-get($colors, "color2");
+                border-width: 3px map-get($colors, "color1");;
+            }                    
+        }
+    }
+
+    .item{
+        .botonesCant{
+            button{
+                height: 2rem;
+                width: auto;
+                align-items: center;
+                background-color: map-get($colors, "color2" );
+                color:map-get($colors, "color1");
+                border-style: none;
+                img{
+                    padding: 0.5rem 0 0.2rem;
+                    height: 1rem;
+                    width: 1rem;
+                }
+                &#btnQuitar{
+                    border-top-left-radius: 7px;
+                    border-bottom-left-radius: 7px;
+
+                    &:active{
+                        transition: .2s all;
+                        background-color:rgb(142, 145, 149);
+                    }
+                }
+                &#btnAgregar{
+                    border-top-right-radius: 7px;
+                    border-bottom-right-radius: 7px;
+                    &:active{
+                        transition: .2s all;
+                        background-color: map-get($colors, "color21" );
+                    }
+                }
+            }
+        }
+
+        button.botonAgregar{
+            width: 40%;
+            height: 2rem;
+            border-style: none;
+            border-radius: 7px;
+            &:active{
+                transition: .2s all;
+                background-color: map-get($colors, "color21" );
+                color:map-get($colors, "color2");
+            }
+
+        }
+    }
+
+    button#btnFinalizarCompra{
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        background-color: map-get($colors, "color21" );
+        color:map-get($colors, "color2");
+        border-style: none;
+        border-radius: 7px;
+        &:active{
+            transition: .2s all;
+            border: 0.8px solid;
+            border-color:map-get($colors, "color2");
+        }
+    }
+
+    button.btn--eliminarItem{
+        background-color: map-get($colors, "color21" );
+        border-style: none;
+        border-radius: 7px;
+        width: 2.2rem;
+        margin:1.2rem;
+
+        &:active{
+            transition: .3s all;
+            background-color:#a623489e;
+            outline-style: none;
+        }
+    }
+}
+
+
+.header{
+    .header__nav{
+        ul{
+            li{
+                button#btnCarrito{
+                    background-color: rgba(230, 173, 67, 0);
+                    border-style: none;
+                    border-radius: 60px;
+                    height: 2rem;
+                    width: 2rem;
+                    padding: 0.1rem;
+                    img{
+                        width: 1.2rem;
+                    }
+                    &:active{
+                        background-color: rgba(129, 129, 129, 0.744);
+                    }
+                }
+            }
+        }
+        
+    }
+}

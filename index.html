@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!--fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Syne:wght@800&display=swap" rel="stylesheet">
+
+    <title>Home: Nana's Collection</title>
+</head>
+<body>
+    <header class="header">
+        <!--Menu de inicio-->
+        <nav class="header__nav">
+            <ul class="header__nav--menu">
+                <li><a href="#seccionInicial">inicio</a></li>
+                <li><a href="#seccionColeccion" id="nanaCollect">Nana's Collection</a></li>
+                <li><a href="./pages/buy.html" id="seccionBuy" >compras</a></li>
+                <li><a href="#seccionAcercaDe" id="aboutUs">acerca de</a></li>
+                <li><a href="#logUser" id="logUser">registrarse</a></li>
+                <li><a href="#sesion" id="sesion">cerrar sesión</a></li>
+                <li><a href=""><img class="carrito--vacio" src="../assets/icons/shopping-cart.svg" alt="carrito"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="formModal" class="modal ">
+        <div class="container--modal">
+            <a href="#" id="closeModal" class="modal--close">
+                <img src="./assets/icons/x.svg" alt="cerrar">
+            </a>
+            <form id="formUserSignUp">
+                <h3>Registrarse</h3>
+                <div class="div__input">
+                    <label class='logo' for="nombre">
+                        <img src="./assets/icons/user.svg" alt="user icon">
+                    </label>
+                    <input type="text"  name="nombre" id="nombreUsuario"  placeholder="Ingrese nombre completo">
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="div__input">
+                    <label class='logo' for="correo">
+                        <img src="./assets/icons/at-sign.svg" alt="mail icon">
+                    </label>
+                    <input type="email" name="correo" id="mailUsuario"  placeholder="Ingrese correo electrónico" >
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="div__input">
+                    <label class='logo' for="passw">
+                        <img src="./assets/icons/lock.svg" alt="password icon">
+                    </label>
+                    <input type="password" name="passw" id="passwordUsuario" placeholder="Ingrese contraseña">
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" id="btn--GuardarUsuario">Registrarse</button>
+                    <button id="btn--IniciarSesion">Iniciar sesión</button>
+                </div>
+            </form>
+
+            <!-- Log in usuario -->
+            <form id="formUserLogIn">
+                <h3>Iniciar sesión</h3>
+                <div class="div__input">
+                    <label class='logo' for="correo">
+                        <img src="./assets/icons/at-sign.svg" alt="mail icon">
+                    </label>
+                    <input type="email" name="correo" id="mailUsuarioLogIn"  placeholder="Ingrese correo electrónico" >
+                    <small class="aviso"></small>
+                </div>
+    
+                <div class="div__input">
+                    <label class='logo' for="passw">
+                        <img src="./assets/icons/lock.svg" alt="password icon">
+                    </label>
+                    <input type="password" name="passw" id="passwordUsuarioLogIn" placeholder="Ingrese contraseña">
+                    <small class="aviso"></small>
+                </div> 
+
+                <div class="botones"> 
+                    <button type="submit" id="btn--GuardarUsuarioLogIn">Registrarse</button>
+                    <button id="btn--IniciarSesionLogIn">Iniciar sesión</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    
+    <section class="section--nana" id="seccionInicial">
+        <div class="section__div__titulo" >
+            <h1>
+                Nana's Collection by Vivienne Westwood
+            </h1>
+        </div>
+        <div class="galeria">
+            <img src="./assets/home.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="section--home" id="seccionColeccion">
+        <div class="section__div__titulo" ">
+            <h1>
+                Nana's Collection
+            </h1>
+        </div>
+        <div class="galeria">
+            <img src="./assets/nanasCollection.jpeg" alt="">
+        </div>
+    </section>
+
+    <section class="section--about" id="seccionAcercaDe">
+        <div class="section__div__titulo">
+            <h1>
+                About us
+            </h1>
+        </div>
+        <div class="galeria">
+            <img src="./assets/about.jpg" alt="">
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer__div">
+            <small>Fotografías &copy; Vivienne Westwood <br> Ilustraciones &copy; Ai Yazawa</small>
+        </div>
+    </footer>
+    
+
+    <script src="./js/main.js" type="module"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+@import '../base/tipografia';
+@import '../base/colors';
+
+.footer{
+    .footer__div{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}

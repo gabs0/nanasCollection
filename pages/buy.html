@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <!--Menu de inicio-->
+        <nav class="header__nav">
+            <ul class="header__nav--menu">
+                <li><a href="../index.html">incio</a></li>
+                <li><a href="#seccionColeccion">Nana's Collection</a></li>
+                <li><a href="#seccionBuy" id="seccionBuy">compras</a></li>
+                <li><a href="../index.html#seccionAcercaDe">acerca de</a></li>
+                <li><a href="#" id="logUser">registrarse</a></li>
+                <li><a href="#sesion" id="sesion">cerrar sesión</a></li>
+                <li><button id="btnCarrito"><img class="carrito--vacio" src="../assets/icons/shopping-cart.svg" alt=""></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="formModal" class="modal ">
+        <div class="container--modal">
+            <a href="#" id="closeModal" class="modal--close">
+                <img src="../assets/icons/x.svg" alt="cerrar">
+            </a>
+            <form id="formUserSignUp">
+                <h3>Registrarse</h3>
+                <div class="div__input">
+                    <label class='logo' for="nombre">
+                        <img src="../assets/icons/user.svg" alt="user icon">
+                    </label>
+                    <input type="text"  name="nombre" id="nombreUsuario"  placeholder="Ingrese nombre completo">
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="div__input">
+                    <label class='logo' for="correo">
+                        <img src="../assets/icons/at-sign.svg" alt="mail icon">
+                    </label>
+                    <input type="email" name="correo" id="mailUsuario"  placeholder="Ingrese correo electrónico" >
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="div__input">
+                    <label class='logo' for="passw">
+                        <img src="../assets/icons/lock.svg" alt="password icon">
+                    </label>
+                    <input type="password" name="passw" id="passwordUsuario" placeholder="Ingrese contraseña">
+                    <small class="aviso"></small>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" id="btn--GuardarUsuario">Registrarse</button>
+                    <button id="btn--IniciarSesion">Iniciar sesión</button>
+                </div>
+            </form>
+
+            <!-- Log in usuario -->
+            <form id="formUserLogIn">
+                <h3>Iniciar sesión</h3>
+                <div class="div__input">
+                    <label class='logo' for="correo">
+                        <img src="../assets/icons/at-sign.svg" alt="mail icon">
+                    </label>
+                    <input type="email" name="correo" id="mailUsuarioLogIn"  placeholder="Ingrese correo electrónico" >
+                    <small class="aviso"></small>
+                </div>
+    
+                <div class="div__input">
+                    <label class='logo' for="passw">
+                        <img src="../assets/icons/lock.svg" alt="password icon">
+                    </label>
+                    <input type="password" name="passw" id="passwordUsuarioLogIn" placeholder="Ingrese contraseña">
+                    <small class="aviso"></small>
+                </div> 
+
+                <div class="botones"> 
+                    <button type="submit" id="btn--GuardarUsuarioLogIn">Registrarse</button>
+                    <button id="btn--IniciarSesionLogIn">Iniciar sesión</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="cartModal" class="modal">
+        <div class="container--modal">
+            <a href="" id="closeCartModal" class="modal--close">
+                <img src="../assets/icons/x.svg" alt="cerrar">
+            </a>
+            <!-- Modal que agrega de forma dinámica los items comprados -->
+            <div id="modalBody">
+                
+            </div>
+            <!-- Mostrar total acumulado -->
+            <div class="modal--total">
+                <h4 id="agradecimiento"></h4>
+                <p id="precioTotal"></p>
+                
+            </div>
+
+
+            <button id="btnFinalizarCompra">Finalizar compra</button>
+        </div>
+    </section>
+
+    <section class="section--buy">
+        <div class="section__div--busqueda">
+            <input class= "buscar" type="text" placeholder="buscar producto" required>
+            <div class="search">
+                <img src="../assets/icons/search.svg" alt="">
+            </div>
+        </div>
+
+        <div class="section__gridContainer">
+            <!--lista de cosas que se pueden comprar-->
+            <div class="section__div--menuCompras">
+                <nav class="section__nav--menuCompras">
+                    <ul class="section__nav--productos">
+                        <li><a href="#">clothes</a>
+                            <ul>
+                                <li><a href="#">t-shirt</a></li>
+                                <li><a href="#">polleras</a></li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li><a href="#">accesorios</a>
+                            <ul>
+                                <li><a href="#">lentes de sol</a></li>
+                                <li><a href="#">encendedor</a></li>
+                                <li><a href="#">anillo</a></li>
+                                <li><a href="#">púa de guitarra</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!--slide con imagenes de la coleccion-->
+            <div class="section__div--runway">
+                <img src="../assets/ej2.jpg" alt="punk rock">
+            </div>
+
+                <!--card con cada producto-->
+            <div class="section__div--productos">
+                <h3>buy from this Collection</h3>
+                <div id="productos" class="section__div--cards"></div>
+                <div id="carrito" class="section__div--carrito"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cardModal" class = "modal">
+        <div class="container--modal">
+            <a href="#" id="closeItemModal" class="modal--close">
+                <img src="../assets/icons/x.svg" alt="cerrar">
+            </a>
+
+            <div id="cardItem" class="item">
+                <!-- Generación dinámica del artículo seleccionado -->
+
+                <div id="divBotones" class="botonesCant">
+                    <button id="btnQuitar"><img src="../assets/icons/minus.svg" alt=""></button>
+                    <input type="text" id="cantidadItem" placeholder="ej. 3">
+                    <button id="btnAgregar"><img src="../assets/icons/plus.svg" alt=""></button>
+                    <small id="mensajeDisponibilidad"></small>
+                </div>
+                <button id="btnAgregarItems" class="botonAgregar">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__div">
+            <small>Fotografías &copy; Vivienne Westwood <br> Ilustraciones &copy; Ai Yazawa</small>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/buy.js"></script>
+</body>
+</html>

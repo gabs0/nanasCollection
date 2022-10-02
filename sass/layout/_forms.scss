@@ -1,0 +1,105 @@
+@import '../base/colors';
+@import '../base/tipografia';
+
+.modal{
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    transition: opacity .5s;
+
+    &--close{
+        text-decoration: none;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        img{
+            float: right;
+            margin-left: 23rem;
+            width: 1rem;
+        }
+    }
+
+    &--show{
+        opacity: 1;
+        pointer-events: unset;
+        transition: opacity .3s;
+    }
+
+    .container--modal{
+        background-color: #bdbdbd;
+        width: 90%;
+        max-width: 25rem;
+        max-height: 90%;
+        margin: auto;
+        display: grid;
+        gap:1em;
+        place-items: center;
+        grid-auto-columns: 100%;
+        border-radius: 10px;
+
+        form{
+            h3{
+                text-align: center;
+            }
+            flex-direction: column;
+            align-items: center;
+            .div__input{
+                display: grid;
+                align-items: center;
+                grid-template-columns: 1fr 1fr; 
+                grid-template-areas: 
+                    "logo valor"
+                    "aviso aviso"; 
+                margin: 0.8rem;
+                label.logo{
+                    grid-area: logo;
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        padding-top: 0.3rem;
+                    }
+                }
+                
+                input{
+                    border-radius: 10px;
+                    width: 19rem;
+                    height: 1.2rem;
+                    padding: 0.5rem;
+                    border-style: none;
+                    background-color: #eaeaeae9;
+                    margin: 0.5rem;
+                    &:focus{
+                        transition: all 0.02s;
+                        outline-color: map-get($colors, "color2");
+                    }
+                }
+
+                small.aviso{
+                    grid-area: aviso;
+                    font-size: 0.8rem;
+                    color: rgb(45, 45, 45);
+                    margin-left: 3.5rem;
+                }
+
+                &.falla input{
+                    border: 0.5px solid;
+                    border-color: brown;
+                }
+    
+                &.correcto input{
+                    border: 0.5px solid;
+                    border-color:seagreen;
+                }
+            }
+        }
+    }
+}
+
+.hide{
+    display: none;
+}
