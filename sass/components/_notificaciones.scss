@@ -1,0 +1,7 @@
+@import '../base/tipografia';
+@import '../base/colors';
+
+.notificacion{
+    background:map-get($colors , 'color0' );
+    font-family: $textos;
+}

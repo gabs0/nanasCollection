@@ -159,6 +159,19 @@ function cambiarNombre(name){
     openForm.innerText = name.split(' ')[0]
 }
 
+//Fubción para mostrar mensaje de estado de sesión
+function mostrarMensajeSesion(valor){
+    Toastify({
+        text: valor,
+        duration: 2000,
+        gravity: 'bottom',
+        position: 'center',
+        className: 'notificacion',
+        stopOnFocus: true,
+    }).showToast()
+}
+
+
 //Evento para registrar un nuevo usuario
 btnRegistrarse.addEventListener('click', (evento)=>{
     evento.preventDefault();
@@ -169,6 +182,7 @@ btnRegistrarse.addEventListener('click', (evento)=>{
         //Actualizar usuario
         sincronizarLStorage('usuarios', usuarios);
         sincronizarLStorage('sesionEstado', 'Iniciada');
+        mostrarMensajeSesion('Usuario creado');
         mostrarSesion();
         hideForm();
     }
@@ -239,9 +253,9 @@ function buscarUsuario(usuario){
     console.log(sesionIniciada)
     if(usuario.mail === mailIngresado.value && usuario.password === passwIngresado.value){
         //Setear el usuario que inició sesión
+        mostrarMensajeSesion('Sesión iniciada');
         sincronizarLStorage('sesionEstado', 'Iniciada');
         sesionIniciada = localStorage.getItem('sesionEstado');
-        console.log(sesionIniciada);
     }
 }
 
@@ -271,6 +285,7 @@ function cerrarSesion(){
     //Setear el usuario que cerró sesión
     sincronizarLStorage('sesionEstado', 'Cerrada');
     sesionIniciada = localStorage.getItem('sesionEstado');
+    mostrarMensajeSesion('Sesión cerrada');
 }
 
 //Evento para cerrar sesión de usuario

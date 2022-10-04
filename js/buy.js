@@ -147,17 +147,23 @@ function verificarStock(producto, cantidadAComprar){
 
 }
 
+//Función con aplicación de Toastify para notificar que se agregó un producto al carrito
+function mostrarMensaje(){
+    Toastify({
+        text: 'Agregado al carrito',
+        duration: 2000,
+        gravity: 'bottom',
+        className: 'notificacion',
+        stopOnFocus: true,
+    }).showToast()
+}
+
 //Evento cerrar modal Item
 closeItem.addEventListener('click', hideItem);
 
 //Evento agregar un item al modal
 btnPlus.addEventListener('click', ()=>{
     let cantidad = parseInt(cantidadItems.value);
-    // if (!isNaN(cantidad)){ 
-    //     cantidad++;
-    // }else{
-    //     cantidad = 1;
-    // }
 
     !isNaN(cantidad) ? cantidad++ : cantidad = 1;
     cantidadItems.value = cantidad;
@@ -166,11 +172,6 @@ btnPlus.addEventListener('click', ()=>{
 //Eventos quitar un item al modal
 btnMinus.addEventListener('click', ()=>{
     let cantidad = parseInt(cantidadItems.value);
-    // if (!isNaN(cantidad) && cantidad != 0){ 
-    //     cantidad--;
-    // }else{
-    //     cantidad = 0;
-    // }
 
     !isNaN(cantidad) && cantidad != 0 ? cantidad-- : cantidad = 0;
     cantidadItems.value = cantidad;
@@ -206,6 +207,8 @@ btnAgregarAlCarrito.addEventListener('click',()=>{
                 console.log(carrito);
             }
         }
+        mostrarMensaje();
+        hideItem();
     }
 })
 
@@ -217,7 +220,6 @@ const modalConItems = document.getElementById('modalBody');
 const btnFinalizarCompra = document.getElementById('btnFinalizarCompra');
 const valorCompra = document.getElementById('precioTotal');
 const closeCartModal = document.getElementById('closeCartModal');
-const mensajeGracias = document.getElementById('agradecimiento')
 
 //Función para abrir modal carrito
 function showCart(){
@@ -255,7 +257,6 @@ function calcularTotal(array){
     }
 }
 
-
 //Función para cargar items en el modal de carrito
 function cargarItemsEnCarrito(array){
     modalConItems.innerHTML = '';
@@ -291,12 +292,17 @@ function descontarItems(productosLS, carrito){
     }
 }
 
-
-
 //Función de agradecimeinto 
 function graciasPorSuCompra(){
-    valorCompra.classList.add('hide')
-    mensajeGracias.innerHTML = `¡Gracias por su compra!`;
+    valorCompra.classList.add('hide');
+    Toastify({
+        text: 'Gracias por su compra!',
+        duration: 2000,
+        gravity: 'bottom',
+        position: 'center',
+        className: 'notificacion',
+        stopOnFocus: true,
+    }).showToast()
 }
 
 //Evento para abrir el modal carrito
@@ -313,11 +319,10 @@ closeCartModal.addEventListener('click', hideCart);
 btnFinalizarCompra.addEventListener('click',()=>{
     descontarItems(productosLS, carrito);
     carrito = [];
+    hideCart();
     graciasPorSuCompra()
     sincronizarLStorage('carrito',carrito)
     cargarItemsEnCarrito(carrito);
 })
 
 
-//cambio de color
-//openCartModal.childNodes[0].setAttribute('src', '../assets/icons/carrito-contenido.svg');
