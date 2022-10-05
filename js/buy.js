@@ -222,7 +222,6 @@ const valorCompra = document.getElementById('precioTotal');
 const closeCartModal = document.getElementById('closeCartModal');
 
 
-
 //Función para abrir modal carrito
 function showCart(){
     sectionModal.classList.add('modal--show');
@@ -327,7 +326,6 @@ openCartModal.addEventListener('click', ()=>{
     cargarItemsEnCarrito(carrito);
 });
 
-
 //Evento para cerrar el modal carrito
 closeCartModal.addEventListener('click', hideCart);
 
@@ -340,5 +338,3 @@ btnFinalizarCompra.addEventListener('click',()=>{
     sincronizarLStorage('carrito',carrito)
     cargarItemsEnCarrito(carrito);
 })
-
-
