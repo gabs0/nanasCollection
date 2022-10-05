@@ -253,7 +253,6 @@ function buscarUsuario(usuario){
     console.log(sesionIniciada)
     if(usuario.mail === mailIngresado.value && usuario.password === passwIngresado.value){
         //Setear el usuario que inició sesión
-        mostrarMensajeSesion('Sesión iniciada');
         sincronizarLStorage('sesionEstado', 'Iniciada');
         sesionIniciada = localStorage.getItem('sesionEstado');
     }
@@ -272,6 +271,7 @@ function usuarioEnSesion(sesionIniciada){
     if(sesionIniciada === 'Iniciada'){
         mostrarSesion();
         ocultarRegistrarse();
+        mostrarMensajeSesion('Sesión iniciada');
         return true
     }else{
         ocultarSesion();

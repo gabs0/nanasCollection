@@ -221,6 +221,8 @@ const btnFinalizarCompra = document.getElementById('btnFinalizarCompra');
 const valorCompra = document.getElementById('precioTotal');
 const closeCartModal = document.getElementById('closeCartModal');
 
+
+
 //Función para abrir modal carrito
 function showCart(){
     sectionModal.classList.add('modal--show');
@@ -237,7 +239,7 @@ function hideBtnFin(){
 }
 
 //Función para eliminar item del carrito
-function eliminarItem(id){
+function eliminarItem (id){
     carrito = carrito.filter((items => items.id !== id));
     sincronizarLStorage('carrito', carrito);
     cargarItemsEnCarrito(carrito);
@@ -257,6 +259,17 @@ function calcularTotal(array){
     }
 }
 
+//Función para mostrar mensaje de artículo eliminado
+function mensajeEliminado(){
+    Toastify({
+        text: 'Producto eliminado del carrito',
+        duration: 2000,
+        gravity: 'bottom',
+        className: 'notificacion',
+        stopOnFocus: true,
+    }).showToast()
+}
+
 //Función para cargar items en el modal de carrito
 function cargarItemsEnCarrito(array){
     modalConItems.innerHTML = '';
@@ -270,15 +283,17 @@ function cargarItemsEnCarrito(array){
                                             <p>${itemComprado.cantidad} unidades</p>
                                             <p>Subtotal $ ${itemComprado.subtotal}</p>
                                         </div>
-                                        <button id="btnEliminar${itemComprado.id}" class="btn--eliminarItem"><img src="../assets/icons/trash-2.svg" alt="trash-2"></button>
+                                        <button id="btnEliminar${itemComprado.id}"  class="btn--eliminarItem"><img src="../assets/icons/trash-2.svg" alt="trash-2"></button>
                                     </div>`
 
         //Evento para eliminar un item del carrito
         let btnEliminarItem = document.getElementById(`btnEliminar${itemComprado.id}`);
         btnEliminarItem.addEventListener('click', ()=>{
             eliminarItem(itemComprado.id);
+            mensajeEliminado();
         })
     })
+
     //calcular total
     calcularTotal(array);
 }
@@ -308,9 +323,10 @@ function graciasPorSuCompra(){
 //Evento para abrir el modal carrito
 openCartModal.addEventListener('click', ()=>{
     showCart();
+    sincronizarLStorage('carrito',carrito)
     cargarItemsEnCarrito(carrito);
-    console.table(carrito)
 });
+
 
 //Evento para cerrar el modal carrito
 closeCartModal.addEventListener('click', hideCart);
