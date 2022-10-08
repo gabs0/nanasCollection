@@ -1,0 +1,103 @@
+
+[
+    {
+        "id": 1,
+        "nombre": "Pollera",    
+        "descripcion": "Escocesa negro",
+        "precio":600,
+        "cantidadDisponible":1000,
+        "url":"p-negro.png",
+        "modelo":"Pollera Hachiko"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Pollera",   
+        "descripcion":"Escocesa rojo",
+        "precio":650,
+        "cantidadDisponible":1200,
+        "url":"p-rojo.png",
+        "modelo":"Pollera Osaki"
+    },
+
+    {
+        "id": 3,
+        "nombre": "Pollera",   
+        "descripcion":"Escocesa gris",
+        "precio":690,
+        "cantidadDisponible":900,
+        "url":"p-gris.png",
+        "modelo":"Pollera Shin"
+    },
+
+    {
+        "id":4,
+        "nombre": "Remera",   
+        "descripcion":"Diseño 'Black Stones'",
+        "precio":1500,
+        "cantidadDisponible":2000,
+        "url":"d-blackStones.png",
+        "modelo": "Black Stones"
+    },
+
+    {
+        "id": 5,
+        "nombre": "Remera",    
+        "descripcion":"Diseño 'Trapnest'",
+        "precio":1100,
+        "cantidadDisponible":500,
+        "url":"d-trapnest.png",
+        "modelo": "Trapnest"
+    },
+
+    {
+        "id": 6,
+        "nombre":"Remera",    
+        "descripcion": "Diseño 'The Sex Pistols'",
+        "precio":900,
+        "cantidadDisponible":700,
+        "url":"d-sexPistols.png",
+        "modelo": "The Sex Pistols"
+    },
+
+    {
+        "id": 7,
+        "nombre": "Accesorio",   
+        "descripcion":"Lentes de sol",
+        "precio": 2000,
+        "cantidadDisponible": 300,
+        "url":"a-sunglasses.png",
+        "modelo":"Lentes de sol"
+    },
+
+    {
+        "id": 8,
+        "nombre": "Accesorio",   
+        "descripcion":"Anillo",
+        "precio":1500,
+        "cantidadDisponible":100,
+        "url": "a-anillo.png",
+        "modelo":"Anillo"
+    },
+
+    {
+        "id": 9,
+        "nombre": "Accesorio",   
+        "descripcion":"Encendedor",
+        "precio":3000,
+        "cantidadDisponible":100,
+        "url":"a-encendedor.png",
+        "modelo":"Orb ligther"
+    },
+
+    {
+        "id": 10,
+        "nombre": "Accesorio",   
+        "descripcion": "Púa de guitarra",
+        "precio":250,
+        "cantidadDisponible":90,
+        "url":"a-guitarpicks.png",
+        "modelo":"Púa"
+    }
+
+]
