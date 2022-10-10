@@ -1,13 +1,10 @@
 
-import { Producto, producto1 , producto2 , producto3, producto4, producto5, producto6, producto7, producto8,producto9, producto10 } from './classes/Producto.js';
+import { Producto} from './classes/Producto.js';
 import { LineaCarrito } from './classes/LineaCarrito.js';
 
 let codigo;
 let productosLS = [];
 let carrito = [];
-
-//carga de productos actuales
-productosLS.push(producto1 , producto2 , producto3, producto4, producto5, producto6, producto7, producto8,producto9, producto10);
 
 //Función para actualizar storage
 function sincronizarLStorage(key, value){
@@ -25,10 +22,6 @@ function comprobarEstadoLSCarrito(){
     //Operador ternario
     localStorage.getItem('carrito') ? carrito = JSON.parse(localStorage.getItem('carrito')) : sincronizarLStorage(`carrito`, carrito);
 }
-
-//Comprueba estado de ls productos
-comprobarEstadoLSproductos();
-cargarProductos(productosLS);
 
 //Comprueba si hay algo en el ls de carrito
 comprobarEstadoLSCarrito();
@@ -59,35 +52,51 @@ function getSubtotal(cantidadItem, precioItem){
     }
 }
 
-//Función para cargar productos con DOM con evento de comprar
-function cargarProductos(array){
-    let divProductos = document.getElementById("productos");
-    array.forEach((producto) => {
-        let newProduct = document.createElement("div");
-        newProduct.innerHTML = `<div class="cardProducto">
-                                    <img src="../assets/${producto.url}" alt="${producto.nombre} - ${producto.descripcion}">
-                                    <div class="card--detalle">
-                                        <h4>${producto.modelo}</h4>
-                                        <p>${producto.descripcion}</p>
-                                        <p class="precio"> $ ${producto.precio}</p>
-                                        <div class="btn--buy">
-                                            <button id='agregarProducto${producto.id}' class="btnComprar" ">comprar</button>
-                                        </div>
+//Función para crear cada card del item en productos disponibles
+function renderizarProductos(item, divProductos){
+    let newProduct = document.createElement("div");
+    newProduct.innerHTML = `<div class="cardProducto">
+                                <img src="../assets/${item.url}" alt="${item.nombre} - ${item.descripcion}">
+                                <div class="card--detalle">
+                                    <h4>${item.modelo}</h4>
+                                    <p>${item.descripcion}</p>
+                                    <p class="precio"> $ ${item.precio}</p>
+                                    <div class="btn--buy">
+                                        <button id='agregarProducto${item.id}' class="btnComprar" ">comprar</button>
                                     </div>
-        </div>`
+                                </div>
+    </div>`
                                     
-        divProductos.appendChild(newProduct);
+    divProductos.appendChild(newProduct);
 
-        // Evento agregar item al carrito
-        let btnComprar = document.getElementById(`agregarProducto${producto.id}`);
-        btnComprar.addEventListener('click',()=>{
-            console.log(producto)
-            showItem()
-            mostrarProducto(producto);
-            cantidadItems.value = '';
-        })
+    // Evento agregar item al carrito
+    let btnComprar = document.getElementById(`agregarProducto${item.id}`);
+    btnComprar.addEventListener('click',()=>{
+        showItem()
+        mostrarProducto(item);
+        cantidadItems.value = '';
     })
 }
+
+//Función para cargar productos con DOM con evento de comprar
+const cargarProductos = async ()=>{
+    const respuesta = await fetch("../productos.json");
+    const productos = await respuesta.json();
+    let divProductos = document.getElementById("productos");
+    for(let item of productos){
+        let nuevoItem = new Producto(item.id, item.nombre, item.descripcion, item.precio, item.cantidadDisponible, item.url,  item.modelo);
+        productosLS.push(nuevoItem);
+        renderizarProductos(nuevoItem, divProductos)
+    }
+    sincronizarLStorage(`productosLS`, productosLS);
+}
+
+//Carga productos //simular carga
+cargarProductos();
+
+//Comprueba estado de ls productos
+comprobarEstadoLSproductos();
+
 
 //DOM para generar un item en un modal
 let imgCard = document.createElement('img');
