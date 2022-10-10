@@ -83,6 +83,7 @@ const cargarProductos = async ()=>{
     const respuesta = await fetch("../productos.json");
     const productos = await respuesta.json();
     let divProductos = document.getElementById("productos");
+
     for(let item of productos){
         let nuevoItem = new Producto(item.id, item.nombre, item.descripcion, item.precio, item.cantidadDisponible, item.url,  item.modelo);
         productosLS.push(nuevoItem);
@@ -91,12 +92,23 @@ const cargarProductos = async ()=>{
     sincronizarLStorage(`productosLS`, productosLS);
 }
 
-//Carga productos //simular carga
-cargarProductos();
+//Función para mostrar la carga y luego los productos
+function simularCarga(){
+    let divCarga = document.getElementById("loader");
+    divCarga.innerHTML=`<img src="../assets/icons/loader.svg" alt="">
+                        <p>Los productos están cargando</p>`
+    setTimeout(()=>{
+        divCarga.remove();
+        cargarProductos()
+    }, 2500)
+}
+
+
+//Cargando productos...
+simularCarga();
 
 //Comprueba estado de ls productos
 comprobarEstadoLSproductos();
-
 
 //DOM para generar un item en un modal
 let imgCard = document.createElement('img');

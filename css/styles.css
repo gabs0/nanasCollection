@@ -634,6 +634,25 @@ nav a {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+.cargando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  grid-row-start: 3;
+  grid-column-start: 3;
+  grid-row-end: 4;
+  grid-column-end: 11;
+}
+.cargando img {
+  animation: cargar 3s infinite;
+}
+
+@keyframes cargar {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .section--nana .galeria {
   display: flex;
   justify-content: center;
