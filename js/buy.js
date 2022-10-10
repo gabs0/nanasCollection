@@ -103,7 +103,6 @@ function simularCarga(){
     }, 2500)
 }
 
-
 //Cargando productos...
 simularCarga();
 
