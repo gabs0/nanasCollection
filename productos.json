@@ -63,7 +63,7 @@
     {
         "id": 7,
         "nombre": "Accesorio",   
-        "descripcion":"Lentes de sol",
+        "descripcion":"Lentes",
         "precio": 2000,
         "cantidadDisponible": 300,
         "url":"a-sunglasses.png",
@@ -93,11 +93,11 @@
     {
         "id": 10,
         "nombre": "Accesorio",   
-        "descripcion": "Púa de guitarra",
+        "descripcion": "Púa",
         "precio":250,
         "cantidadDisponible":90,
         "url":"a-guitarpicks.png",
-        "modelo":"Púa"
+        "modelo":"Púa de guitarra"
     }
 
 ]

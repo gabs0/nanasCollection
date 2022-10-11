@@ -26,6 +26,8 @@ function comprobarEstadoLSCarrito(){
 //Comprueba si hay algo en el ls de carrito
 comprobarEstadoLSCarrito();
 
+
+
 //Funcion para verificar variable definida
 function valorIsDefine(variable){
     if (variable !== null && variable !== undefined && variable.length !== 0){
@@ -78,36 +80,48 @@ function renderizarProductos(item, divProductos){
     })
 }
 
+//Comprueba estado de ls productos
+comprobarEstadoLSproductos();
+
+//DOM para cargar productos
+let divProductos = document.getElementById("productos");
+
 //Función para cargar productos con DOM con evento de comprar
 const cargarProductos = async ()=>{
     const respuesta = await fetch("../productos.json");
     const productos = await respuesta.json();
-    let divProductos = document.getElementById("productos");
 
     for(let item of productos){
         let nuevoItem = new Producto(item.id, item.nombre, item.descripcion, item.precio, item.cantidadDisponible, item.url,  item.modelo);
         productosLS.push(nuevoItem);
-        renderizarProductos(nuevoItem, divProductos)
+        console.log(productosLS)
+        renderizarProductos(nuevoItem, divProductos);
+        if(localStorage.getItem('productosLS')){
+            productosLS = JSON.parse(localStorage.getItem('productosLS'));
+            console.log(productosLS)
+        }
+        else{
+            sincronizarLStorage(`productosLS`, productosLS);
+            console.log(productosLS)
+        }
     }
-    sincronizarLStorage(`productosLS`, productosLS);
+    //sincronizarLStorage(`productosLS`, productosLS);
+    
 }
 
 //Función para mostrar la carga y luego los productos
-function simularCarga(){
+function simularCargaProductos(){
     let divCarga = document.getElementById("loader");
     divCarga.innerHTML=`<img src="../assets/icons/loader.svg" alt="">
                         <p>Los productos están cargando</p>`
     setTimeout(()=>{
         divCarga.remove();
-        cargarProductos()
+        cargarProductos();
     }, 2500)
 }
 
 //Cargando productos...
-simularCarga();
-
-//Comprueba estado de ls productos
-comprobarEstadoLSproductos();
+simularCargaProductos();
 
 //DOM para generar un item en un modal
 let imgCard = document.createElement('img');
@@ -117,7 +131,6 @@ let idItem;
 function mostrarProducto(producto){
     //capturar divModal
     let divCardModal =document.getElementById('cardItem');
-    console.log(divCardModal)
 
     //setear atributos
     imgCard.setAttribute('class', 'articulo');
@@ -357,4 +370,172 @@ btnFinalizarCompra.addEventListener('click',()=>{
     graciasPorSuCompra()
     sincronizarLStorage('carrito',carrito)
     cargarItemsEnCarrito(carrito);
+})
+
+//DOM filtros 
+const filtroRopa = document.getElementById("ropa");
+const filtroRemeras = document.getElementById("remeras");
+const filtroPolleras = document.getElementById("polleras");
+const filtroAccesorios = document.getElementById("accesorios");
+const filtroLentes = document.getElementById("lentes");
+const filtroEncendedor = document.getElementById("encendedor");
+const filtroAnillo = document.getElementById("anillo");
+const filtroPua = document.getElementById("pua");
+
+let contador = 0;
+
+//Función para capturar recursos del archivo
+const capturarElementosJSON = async ()=>{
+    const respuesta = await fetch("../productos.json");
+    const productos = await respuesta.json();
+    return productos
+}
+
+//Evento para mostrar laos items que catalogan como ropa
+filtroRopa.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.nombre === "Remera" || producto.nombre === "Pollera"){
+                renderizarProductos(producto, divProductos);   
+                contador++;
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Remeras
+filtroRemeras.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.nombre === "Remera"){
+                renderizarProductos(producto, divProductos);
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Polleras
+filtroPolleras.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.nombre === "Pollera"){
+                renderizarProductos(producto, divProductos);   
+                contador++;
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Accesorio
+filtroAccesorios.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.nombre === "Accesorio"){
+                renderizarProductos(producto, divProductos); 
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Lentes
+filtroLentes.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.descripcion === "Lentes"){
+                renderizarProductos(producto, divProductos); 
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Encendedor
+filtroEncendedor.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.descripcion === "Encendedor"){
+                renderizarProductos(producto, divProductos); 
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Anillo
+filtroAnillo.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.descripcion === "Anillo"){
+                renderizarProductos(producto, divProductos); 
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+//Evento para mostrar los items que catalogan como Pua
+filtroPua.addEventListener('click',()=>{
+    divProductos.innerHTML= ``;
+    capturarElementosJSON().then( (datos) =>{
+        datos.forEach(producto => {
+            if(producto.descripcion === "Púa"){
+                renderizarProductos(producto, divProductos); 
+                contador++;  
+            }
+        });
+        if(contador == 0){
+            divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+        }
+    })
+})
+
+
+//DOM para búsqueda
+const btnBusqueda = document.getElementById('btnBuscar');
+const itemBuscado = document.getElementById('busquedaItem');
+
+//Evento para buscar un item
+btnBusqueda.addEventListener('click', (e)=>{
+    e.preventDefault();
+    let palabraABuscar = productosLS.filter(prod => prod.nombre.toLowerCase() == itemBuscado.value.toLowerCase() || prod.descripcion.toLowerCase() == itemBuscado.value.toLowerCase() || prod.modelo.toLowerCase() == itemBuscado.value.toLowerCase())
+    console.log(palabraABuscar);
+
+    if(palabraABuscar.length == 0){
+        divProductos.innerHTML= `<p>No se encontraron productos</p>`;
+    }
+    else{
+        palabraABuscar.forEach(p => {
+            renderizarProductos(p, divProductos);
+        })
+    }
 })

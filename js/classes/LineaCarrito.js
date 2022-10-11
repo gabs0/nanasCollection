@@ -1,4 +1,3 @@
-//clase LineaCarrito (contiene el id, nombre, descripcion, precio unit, cantidad, subtotal)
 
 export class LineaCarrito{
     constructor(id, nombreProducto, descripcion, precio, cantidad, subtotal, url){
