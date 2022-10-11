@@ -91,10 +91,9 @@ const cargarProductos = async ()=>{
     for(let item of productos){
         let nuevoItem = new Producto(item.id, item.nombre, item.descripcion, item.precio, item.cantidadDisponible, item.url,  item.modelo);
         productosLS.push(nuevoItem);
-        console.log(productosLS)
         renderizarProductos(nuevoItem, divProductos);
     }
-    sincronizarLStorage(`productosLS`, productosLS); //como sincronizar  y que no se repita??
+    sincronizarLStorage(`productosLS`, productosLS); 
 }
 
 //Función para mostrar la carga y luego los productos
@@ -200,7 +199,6 @@ btnMinus.addEventListener('click', ()=>{
 
 //Evento agregar elementos al carrito
 btnAgregarAlCarrito.addEventListener('click',()=>{
-    console.log(valorIsDefine(cantidadItems.value));
     if(valorIsDefine(cantidadItems.value)){
         let itemComprado = productosLS.find((item => item.id === idItem));
         let existeEnCarrito = carrito.some (prod => prod.id === itemComprado.id);
@@ -209,7 +207,6 @@ btnAgregarAlCarrito.addEventListener('click',()=>{
             carrito.map(prod => {
                 if(prod.id === idItem){
                     prod.cantidad += Number(cantidadItems.value)
-                    console.log(prod.cantidad)
                 }
                 if(verificarStock(prod, prod.cantidad)){
                     sincronizarLStorage('carrito', carrito);
@@ -219,13 +216,10 @@ btnAgregarAlCarrito.addEventListener('click',()=>{
         }else{
             //Si hay stock procede sino muestra mensaje de error
             if(verificarStock(itemComprado,cantidadItems.value)){
-                console.log(itemComprado);
-
                 //generar nueva linea de producto
                 nuevaLineaCarrito(itemComprado, cantidadItems.value);
                 //Actualizar carrito
                 sincronizarLStorage('carrito', carrito);
-                console.log(carrito);
             }
         }
         mostrarMensaje();
@@ -517,8 +511,6 @@ btnBusqueda.addEventListener('click', (e)=>{
     e.preventDefault();
     divProductos.innerHTML= ``;
     let palabraABuscar = productosLS.filter(prod => prod.nombre.toLowerCase() == itemBuscado.value.toLowerCase() || prod.descripcion.toLowerCase() == itemBuscado.value.toLowerCase() || prod.modelo.toLowerCase() == itemBuscado.value.toLowerCase())
-    console.log(palabraABuscar);
-
     if(palabraABuscar.length == 0){
         divProductos.innerHTML= `<p>No se encontraron productos</p>`;
     }
