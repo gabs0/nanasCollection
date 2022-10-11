@@ -2,9 +2,8 @@
 import { Producto} from './classes/Producto.js';
 import { LineaCarrito } from './classes/LineaCarrito.js';
 
-let codigo;
-let productosLS = [];
 let carrito = [];
+let productosLS = [];
 
 //Función para actualizar storage
 function sincronizarLStorage(key, value){
@@ -25,8 +24,6 @@ function comprobarEstadoLSCarrito(){
 
 //Comprueba si hay algo en el ls de carrito
 comprobarEstadoLSCarrito();
-
-
 
 //Funcion para verificar variable definida
 function valorIsDefine(variable){
@@ -90,23 +87,14 @@ let divProductos = document.getElementById("productos");
 const cargarProductos = async ()=>{
     const respuesta = await fetch("../productos.json");
     const productos = await respuesta.json();
-
+    productosLS = [];
     for(let item of productos){
         let nuevoItem = new Producto(item.id, item.nombre, item.descripcion, item.precio, item.cantidadDisponible, item.url,  item.modelo);
         productosLS.push(nuevoItem);
         console.log(productosLS)
         renderizarProductos(nuevoItem, divProductos);
-        if(localStorage.getItem('productosLS')){
-            productosLS = JSON.parse(localStorage.getItem('productosLS'));
-            console.log(productosLS)
-        }
-        else{
-            sincronizarLStorage(`productosLS`, productosLS);
-            console.log(productosLS)
-        }
     }
-    //sincronizarLStorage(`productosLS`, productosLS);
-    
+    sincronizarLStorage(`productosLS`, productosLS); //como sincronizar  y que no se repita??
 }
 
 //Función para mostrar la carga y luego los productos
@@ -527,6 +515,7 @@ const itemBuscado = document.getElementById('busquedaItem');
 //Evento para buscar un item
 btnBusqueda.addEventListener('click', (e)=>{
     e.preventDefault();
+    divProductos.innerHTML= ``;
     let palabraABuscar = productosLS.filter(prod => prod.nombre.toLowerCase() == itemBuscado.value.toLowerCase() || prod.descripcion.toLowerCase() == itemBuscado.value.toLowerCase() || prod.modelo.toLowerCase() == itemBuscado.value.toLowerCase())
     console.log(palabraABuscar);
 
