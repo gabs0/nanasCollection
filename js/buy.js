@@ -25,6 +25,9 @@ function comprobarEstadoLSCarrito(){
 //Comprueba si hay algo en el ls de carrito
 comprobarEstadoLSCarrito();
 
+//Comprueba si hay algo en el ls de productos
+comprobarEstadoLSproductos();
+
 //Funcion para verificar variable definida
 function valorIsDefine(variable){
     if (variable !== null && variable !== undefined && variable.length !== 0){
@@ -76,9 +79,6 @@ function renderizarProductos(item, divProductos){
         cantidadItems.value = '';
     })
 }
-
-//Comprueba estado de ls productos
-comprobarEstadoLSproductos();
 
 //DOM para cargar productos
 let divProductos = document.getElementById("productos");
@@ -163,8 +163,6 @@ function verificarStock(producto, cantidadAComprar){
     }else{
         return true
     }
-
-
 }
 
 //Función con aplicación de Toastify para notificar que se agregó un producto al carrito
@@ -211,7 +209,6 @@ btnAgregarAlCarrito.addEventListener('click',()=>{
                 if(verificarStock(prod, prod.cantidad)){
                     sincronizarLStorage('carrito', carrito);
                 }
-                
             })
         }else{
             //Si hay stock procede sino muestra mensaje de error
@@ -220,13 +217,12 @@ btnAgregarAlCarrito.addEventListener('click',()=>{
                 nuevaLineaCarrito(itemComprado, cantidadItems.value);
                 //Actualizar carrito
                 sincronizarLStorage('carrito', carrito);
+                mostrarMensaje();
+                hideItem();
             }
         }
-        mostrarMensaje();
-        hideItem();
     }
 })
-
 
 //DOM carrito
 const openCartModal = document.getElementById('btnCarrito');

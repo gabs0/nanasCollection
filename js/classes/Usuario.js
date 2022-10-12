@@ -5,5 +5,4 @@ export class Usuario {
         this.mail = mail;
         this.password = password;
     }
-
 }
