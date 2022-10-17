@@ -127,9 +127,8 @@ nav a {
   margin: 0.9rem;
   text-decoration: none;
 }
-.header .header__nav ul li button#btnCarrito img {
-  width: 1.3rem;
-  height: auto;
+.header .header__nav ul li button#btnCarrito i {
+  font-size: 1rem;
 }
 
 /*tipografia*/
@@ -317,10 +316,11 @@ button {
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
 }
-.modal--close img {
+.modal--close i {
   float: right;
   margin-left: 23rem;
   width: 1rem;
+  color: #000000;
 }
 .modal--show {
   opacity: 1;
@@ -358,8 +358,9 @@ button {
   display: flex;
   justify-content: center;
 }
-.modal .container--modal form .div__input label.logo img {
+.modal .container--modal form .div__input label.logo i {
   padding-top: 0.3rem;
+  font-size: 1.2rem;
 }
 .modal .container--modal form .div__input input {
   border-radius: 10px;
@@ -554,7 +555,9 @@ section .section__gridContainer .section__div--productos .section__div--cards .c
   border-style: none;
   border-radius: 7px;
   width: 2.2rem;
+  height: 2rem;
   margin: 1.2rem;
+  font-size: 1.2rem;
 }
 .container--modal button.btn--eliminarItem:active {
   transition: 0.3s all;
@@ -656,11 +659,19 @@ nav a {
   }
 }
 .section--nana .galeria {
-  display: flex;
-  justify-content: center;
+  width: 70%;
+  max-width: 700px;
 }
-.section--nana .galeria img {
+.section--nana .galeria .galeria_slider {
+  display: flex;
+  width: 700%;
   height: 40rem;
+}
+.section--nana .galeria .galeria_slider .slide {
+  width: 100%;
+}
+.section--nana .galeria .galeria_slider .slide img {
+  height: 35.5rem;
   width: auto;
 }
 
@@ -797,6 +808,9 @@ nav a {
 .modal .container--modal {
   background-color: #bdbdbd;
 }
+.modal .container--modal #closeItemModal {
+  color: #000000;
+}
 .modal .container--modal .item {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -830,6 +844,10 @@ nav a {
   border: none;
   outline: none;
   padding-left: 0.8rem;
+}
+.modal .container--modal .item .botonesCant i {
+  font-size: 0.8rem;
+  padding: 0.5rem 0 0 0;
 }
 .modal .container--modal .item .botonAgregar {
   grid-area: botonAgregar;

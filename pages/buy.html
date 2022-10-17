@@ -8,6 +8,9 @@
     <!-- Libreria de Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+    <!-- iconos -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <!-- Archivo de estilos -->
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -24,7 +27,7 @@
                 <li><a href="../index.html#seccionAcercaDe">acerca de</a></li>
                 <li><a href="#" id="logUser">registrarse</a></li>
                 <li><a href="#sesion" id="sesion">cerrar sesión</a></li>
-                <li><button id="btnCarrito"><img class="carrito--vacio" src="../assets/icons/shopping-cart.svg" alt=""></button></li>
+                <li><button id="btnCarrito"><i class="fi fi-rr-shopping-cart carrito--vacio"></i></button></li>
             </ul>
         </nav>
     </header>
@@ -32,13 +35,13 @@
     <section id="formModal" class="modal ">
         <div class="container--modal">
             <a href="#" id="closeModal" class="modal--close">
-                <img src="../assets/icons/x.svg" alt="cerrar">
+                <i class="fi fi-rr-cross-small"></i>
             </a>
             <form id="formUserSignUp">
                 <h3>Registrarse</h3>
                 <div class="div__input">
                     <label class='logo' for="nombre">
-                        <img src="../assets/icons/user.svg" alt="user icon">
+                        <i class="fi fi-sr-user"></i>
                     </label>
                     <input type="text"  name="nombre" id="nombreUsuario"  placeholder="Ingrese nombre completo">
                     <small class="aviso"></small>
@@ -46,7 +49,7 @@
 
                 <div class="div__input">
                     <label class='logo' for="correo">
-                        <img src="../assets/icons/at-sign.svg" alt="mail icon">
+                        <i class="fi fi-sr-at"></i>
                     </label>
                     <input type="email" name="correo" id="mailUsuario"  placeholder="Ingrese correo electrónico" >
                     <small class="aviso"></small>
@@ -54,7 +57,7 @@
 
                 <div class="div__input">
                     <label class='logo' for="passw">
-                        <img src="../assets/icons/lock.svg" alt="password icon">
+                        <i class="fi fi-rr-lock"></i>
                     </label>
                     <input type="password" name="passw" id="passwordUsuario" placeholder="Ingrese contraseña">
                     <small class="aviso"></small>
@@ -71,7 +74,7 @@
                 <h3>Iniciar sesión</h3>
                 <div class="div__input">
                     <label class='logo' for="correo">
-                        <img src="../assets/icons/at-sign.svg" alt="mail icon">
+                        <i class="fi fi-sr-at"></i>
                     </label>
                     <input type="email" name="correo" id="mailUsuarioLogIn"  placeholder="Ingrese correo electrónico" >
                     <small class="aviso"></small>
@@ -79,7 +82,7 @@
     
                 <div class="div__input">
                     <label class='logo' for="passw">
-                        <img src="../assets/icons/lock.svg" alt="password icon">
+                        <i class="fi fi-rr-lock"></i>
                     </label>
                     <input type="password" name="passw" id="passwordUsuarioLogIn" placeholder="Ingrese contraseña">
                     <small class="aviso"></small>
@@ -97,7 +100,7 @@
     <section id="cartModal" class="modal">
         <div class="container--modal">
             <a href="" id="closeCartModal" class="modal--close">
-                <img src="../assets/icons/x.svg" alt="cerrar">
+                <i class="fi fi-rr-cross-small"></i>
             </a>
             <!-- Modal que agrega de forma dinámica los items comprados -->
             <div id="modalBody">
@@ -119,7 +122,7 @@
         <div class="section__div--busqueda">
             <input id="busquedaItem" class= "buscar" type="text" placeholder="buscar producto" required>
             <div id="btnBuscar" class="search">
-                <img src="../assets/icons/search.svg" alt="">
+                <i class="fi fi-rr-search"></i>
             </div>
         </div>
 
@@ -143,6 +146,8 @@
                                 <li><a id="pua" href="#">púa de guitarra</a></li>
                             </ul>
                         </li>
+                        <br>
+                        <li><a id="mostrarTodo" href="">todo</a></li>
                     </ul>
                 </nav>
             </div>
@@ -167,16 +172,16 @@
     <section id="cardModal" class = "modal">
         <div class="container--modal">
             <a href="#" id="closeItemModal" class="modal--close">
-                <img src="../assets/icons/x.svg" alt="cerrar">
+                <i class="fi fi-rr-cross-small"></i>
             </a>
 
             <div id="cardItem" class="item">
                 <!-- Generación dinámica del artículo seleccionado -->
 
                 <div id="divBotones" class="botonesCant">
-                    <button id="btnQuitar"><img src="../assets/icons/minus.svg" alt=""></button>
+                    <button id="btnQuitar"><i class="fi fi-rr-minus"></i></button>
                     <input type="text" id="cantidadItem" placeholder="ej. 3">
-                    <button id="btnAgregar"><img src="../assets/icons/plus.svg" alt=""></button>
+                    <button id="btnAgregar"><i class="fi fi-rr-plus"></i></button>
                     <small id="mensajeDisponibilidad"></small>
                 </div>
                 <button id="btnAgregarItems" class="botonAgregar">Agregar al carrito</button>

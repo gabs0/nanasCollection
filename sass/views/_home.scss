@@ -1,10 +1,18 @@
 .section--nana{
     .galeria{
-        display: flex;
-        justify-content: center;
-        img{
-            height:40rem;
-            width: auto;
+        width: 70%;
+        max-width: 700px;
+        .galeria_slider{
+            display: flex;
+            width:700% ;
+            height: 40rem;
+            .slide{
+                width:100% ;
+                img{
+                    height:35.5rem;
+                    width: auto;
+                }
+            }
         }
     }
 }
