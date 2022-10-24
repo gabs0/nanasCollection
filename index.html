@@ -111,55 +111,68 @@
             </h1>
         </div>
         <div class="galeria">
-            <div class="slider_btn--prev">
-                <i class="fi fi-rr-angle-left"></i>
+            <div class="slide" id="slideContenedor">
+                <img class="slide__img" id="0" src="./assets/slider_home/home.jpg" alt="">
             </div>
-            <div class="galeria_slider">
-                <div class="slide">
-                    <img src="./assets/slider_home/home.jpg" alt="">
-                </div>
-                <div class="slide"> 
-                    <img src="./assets/slider_home/home2.jpg" alt=""> 
-                </div>
-
-                <div class="slide">
-                    <img src="./assets/slider_home/home3.jpg" alt=""> 
-                </div>
-
-                <div class="slide">
-                    <img src="./assets/slider_home/home4.jpg" alt=""> 
-                </div>
-
-                <div class="slide">
-                    <img src="./assets/slider_home/home5.jpg" alt=""> 
-                </div>
-
-                <div class="slide">
-                    <img src="./assets/slider_home/home6.jpg" alt=""> 
-                </div>
-
-                <div class="slide">
-                    <img src="./assets/slider_home/home7.jpg" alt=""> 
-                </div>
-            </div>
-
-            <div class="slider_btn--next">
-                <i class="fi fi-rr-angle-right"></i>
-            </div>
-
-            
+            <!-- botones de slide -->
+            <div id="btnPrev" class="slider_btn slider_btn--prev"><i class="fi fi-rr-angle-left"></i></div>
+            <div id="btnNext" class="slider_btn slider_btn--next"><i class="fi fi-rr-angle-right"></i></div>
         </div>
     </section>
 
     <section class="section--home" id="seccionColeccion">
         <div class="section__div__titulo" ">
             <h1>
-                Nana's Collection
+                Personajes: Nana
             </h1>
         </div>
+
         <div class="galeria">
-            <img src="./assets/nanasCollection.jpeg" alt="">
+            <!-- botones de slide -->
+            <button id="btnRetroceder" class="cards__btn--retroceder"><i class="fi fi-rr-angle-left"></i></button>
+
+            <div id="cardPersonajes" class="sliderCards">
+                <div class="card active">
+                    <img src="./assets/nana.jpg" alt="" class="insp">
+                    <p>Nana Ōsaki</p>
+                    <small>Vocalista y compositora de Black Stones <br>Habitación 707</small>
+                </div>
+
+                <div class="card active">
+                    <img src="./assets/hachiko.jpg" alt="" class="insp">
+                    <p>Nana Komatsu</p>
+                    <small>Compañera de piso <br>Habitación 707</small>
+                </div>
+
+                <div class="card active">
+                    <img src="./assets/ren.jpg" alt="" class="insp">
+                    <p>Ren Honjō</p>
+                    <small>Guitarrista de Trapnest <br>Prometido de Nana Ōsaki</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/nobu.jpg" alt="" class="insp">
+                    <p>Nobuo Terashima</p>
+                    <small>Guitarrista y compositor de Black Stones</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/yasu.jpg" alt="" class="insp">
+                    <p>Yasushi Takagi</p>
+                    <small>Baterista de Black Stones</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/shin.jpg" alt="" class="insp">
+                    <p>Shinichi Okazaki</p>
+                    <small>Bajista de Black Stones</small>
+                </div>
+            </div>
+
+            <!-- botones de slide -->
+            <button id="btnAvanzar" class="cards__btn--avanzar"><i class="fi fi-rr-angle-right"></i></button>
         </div>
+        <div id="puntos"></div>
     </section>
 
     <section class="section--about" id="seccionAcercaDe">

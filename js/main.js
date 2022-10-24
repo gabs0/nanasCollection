@@ -296,3 +296,67 @@ sesionUsuario.addEventListener('click', ()=>{
 }); 
 
 usuarioEnSesion(sesionIniciada);
+
+//DOM slider de nana inspo
+const divSlider = document.getElementById("slideContenedor");
+let imgSlider = document.querySelector(".slide img");
+const btnNext = document.getElementById("btnNext");
+const btnPrevio = document.getElementById("btnPrev");
+const rutas = [ '../assets/slider_home/home.jpg',
+                '../assets/slider_home/home2.jpg',
+                '../assets/slider_home/home3.jpg',
+                '../assets/slider_home/home4.jpg',
+                '../assets/slider_home/home5.jpg',
+                '../assets/slider_home/home6.jpg',
+                '../assets/slider_home/home7.jpg'
+];
+let posicion;
+
+function renderizarSlider(posicion){
+    imgSlider.setAttribute('id', posicion)
+    imgSlider.setAttribute('class', 'slide__img');
+    imgSlider.setAttribute('src',`${rutas[posicion]}`);
+}
+
+function mostrarSliderSiguiente(){
+    posicion = Number(divSlider.children[0].getAttribute('id'));
+    posicion >= rutas.length - 1 ? posicion = 0 : posicion++;
+    renderizarSlider(posicion);
+}
+
+function mostrarSliderAnterior(){
+    posicion = Number(divSlider.children[0].getAttribute('id'));
+    posicion <= 0  ? posicion = rutas.length - 1 : posicion--;
+    renderizarSlider(posicion);
+}
+
+btnNext.addEventListener('click', mostrarSliderSiguiente);
+btnPrevio.addEventListener('click', mostrarSliderAnterior);
+
+//DOM slider con cards de los personajes
+const cardsConPersonajes = document.getElementById('cardPersonajes').children;
+const arrayPersonajes =[...cardsConPersonajes];
+const btnAvanzar = document.getElementById('btnAvanzar');
+const btnRetroceder = document.getElementById('btnRetroceder');
+const puntos = document.getElementById('puntos');
+let pos=0;
+
+btnAvanzar.addEventListener('click',()=>{
+    
+    let esUltimoActive = (persona) => persona.classList.contains('active')
+    let indexUltimoActive = arrayPersonajes.findLastIndex(esUltimoActive)
+    console.log(indexUltimoActive)
+    console.log(pos)
+
+    if(indexUltimoActive+1 > arrayPersonajes.length){
+        console.log(arrayPersonajes[0]);
+        arrayPersonajes[0].setAttribute('display', 'initial');
+    }else{
+        arrayPersonajes[indexUltimoActive+1].classList.add('active');
+        arrayPersonajes[0+pos].style.display = 'none';
+        arrayPersonajes[0+pos].classList.remove('active');
+    }
+    pos++;
+    console.log(indexUltimoActive)
+    console.log(pos)
+})
