@@ -115,6 +115,7 @@ let imgCard = document.createElement('img');
 let descripcionCard = document.createElement('div');
 let idItem;
 
+//Función para mostrar productos
 function mostrarProducto(producto){
     //capturar divModal
     let divCardModal =document.getElementById('cardItem');
@@ -249,7 +250,7 @@ function hideBtnFin(){
 }
 
 //Función para eliminar item del carrito
-function eliminarItem (id){
+const eliminarItem = (id)=>{
     carrito = carrito.filter((items => items.id !== id));
     sincronizarLStorage('carrito', carrito);
     cargarItemsEnCarrito(carrito);
@@ -293,7 +294,7 @@ function cargarItemsEnCarrito(array){
                                             <p>${itemComprado.cantidad} unidades</p>
                                             <p>Subtotal $ ${itemComprado.subtotal}</p>
                                         </div>
-                                        <button id="btnEliminar${itemComprado.id}"  class="btn--eliminarItem"><i class="fi fi-rr-trash"></i></button>
+                                        <button id="btnEliminar${itemComprado.id}" data = "(${itemComprado.id})"  class="btn--eliminarItem"><i class="fi fi-rr-trash"></i></button>
                                     </div>`
 
         //Evento para eliminar un item del carrito
@@ -303,7 +304,6 @@ function cargarItemsEnCarrito(array){
             mensajeEliminado();
         })
     })
-
     //calcular total
     calcularTotal(array);
 }
@@ -360,8 +360,6 @@ const filtroEncendedor = document.getElementById("encendedor");
 const filtroAnillo = document.getElementById("anillo");
 const filtroPua = document.getElementById("pua");
 const filtroTodo = document.getElementById("mostrarTodo");
-
-
 let contador = 0;
 
 //Función para capturar recursos del archivo

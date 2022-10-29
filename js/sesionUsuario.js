@@ -62,7 +62,6 @@ function validarFormulario(){
     const valorPassw = passw.value;
 
     if(!valorIsDefine(valorNombre)){
-        console.log("vacio");
         valorFalla(nombreCompleto, 'Campo vacío');
 
     }else{
@@ -71,7 +70,6 @@ function validarFormulario(){
     }
 
     if(!valorIsDefine(valorCorreo)){
-        console.log("vacio");
         valorFalla(correo, 'Campo vacío');
 
     }else if(!validarCorreo(valorCorreo)) {
@@ -82,7 +80,6 @@ function validarFormulario(){
     }
 
     if(!valorIsDefine(valorPassw)){
-        console.log("vacio");
         valorFalla(passw, 'Campo vacío');
     }else if(valorPassw.length < 8){
         valorFalla(passw, 'La contraseña debe tener al menos 8 caracteres');
@@ -252,7 +249,6 @@ btnIniciarSesion.addEventListener('click',()=>{
 
 //Función para evaluar si el usario inició sesión
 function usuarioEnSesion(sesionIniciada){
-    console.log(sesionIniciada)
     if(sesionIniciada === 'Iniciada'){
         mostrarSesion();
         ocultarRegistrarse();
@@ -283,6 +279,5 @@ sesionUsuario.addEventListener('click', ()=>{
 
 //Comprueba si hay algo en ls de Usuarios
 comprobarEstadoDeLocalSUsuarios();
-console.log(sesionIniciada)
 comprobarSesion();
 usuarioEnSesion(sesionIniciada);
