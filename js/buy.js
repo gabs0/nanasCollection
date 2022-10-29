@@ -99,7 +99,7 @@ const cargarProductos = async ()=>{
 //Función para mostrar la carga y luego los productos
 function simularCargaProductos(){
     let divCarga = document.getElementById("loader");
-    divCarga.innerHTML=`<img src="../assets/icons/loader.svg" alt="">
+    divCarga.innerHTML=`<i class="fi fi-rr-rotate-right"></i>
                         <p>Los productos están cargando</p>`
     setTimeout(()=>{
         divCarga.remove();
