@@ -1,13 +1,55 @@
+:root{
+    --moverX : 0;
+}
+.desplazar{
+    transform: translateX(var(--moverX));
+    transition: all 0.6s ease;
+    
+}
+
 .section--nana{
+    align-items: center;
     .galeria{
-        display: flex;
-        justify-content: center;
-        img{
-            height:40rem;
-            width: auto;
+        width: 90%;
+        max-width: 80rem;
+        position: relative;
+        .slide{
+            width:100%;
+            height: 100%;
+            align-self: center;
+            &__img{
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .slider_btn{
+            position:absolute;
+            top:50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            i{
+                font-size: 1.8rem;
+                color:map-get($colors , "color2" );
+            }
+            
+            &--next{
+                right: 1rem;
+                &:hover{
+                    background-color:map-get($colors , "color22");
+                }
+            }
+
+            &--prev{
+                left:1rem;
+                &:hover{
+                    background-color:map-get($colors , "color22");
+                }
+            }
         }
     }
 }
+
 
 .section__div--busqueda{
     display: flex;
@@ -24,30 +66,98 @@
         border-style: none;
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
-        //transition: all 0.6s ease;
         box-shadow:  20px 20px 60px #bebebe,
         -20px -20px 60px #ffffff;
     }
 }
 
 .section--home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
     .galeria{
-        display: flex;
-        justify-content: center;
-        img{
-            height:40rem;
-            width: auto;
+        display: inline-flex;
+        align-items: center;
+        height: 40rem;
+        .sliderCards{
+            width: 200%;
+            height: 30rem;
+            display: flex;
+            align-items: center;
+            transform: translateX(0%);
+            .card{
+                width: 18rem;
+                display: flex;
+                flex-direction: column;
+                margin: 0 2rem ;
+                align-items: center;
+                height: 420px;
+                background-color: map-get($colors, "color2");
+                box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+                border-radius: 21px;
+                padding: 1rem;
+                img{
+                    width: auto;
+                    height: 300px;
+                }
+                p{
+                    font-size: 20px;
+                    text-align: center;
+                    padding: 0.3rem;
+                    background-color: #ffffff;
+                }
+                small{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    button{
+        border-radius: 1000px;
+        height: 2.3rem;
+        width: 2.4rem;
+        margin: 0.5rem;
+        border-style: none;
+        cursor: pointer;
+        position:absolute;
+        transform: translateY(160%);
+        i{
+            font-size: 1.2rem;
+        }
+
+        &.cards__btn--avanzar{
+            right: 10px;
+            
+        }
+        &.cards__btn--retroceder{
+            left: 10px;
         }
     }
 }
 
+
 .section--about{
-    .galeria{
-        display: flex;
-        justify-content: center;
-        img{
-            height:40rem;
-            width: auto;
+    display: flex;
+    align-items: center;
+    .info{
+        text-align: center;
+        width: 40rem;
+        p{
+            font-size: 1.1rem;
         }
     }
+    
+}
+
+//Animaciones
+.fade{
+    animation-name:fade;
+    animation-duration:1.5s;
+}
+
+@keyframes fade {
+    from{opacity: 4;}
+    to{opacity: 1;}
 }

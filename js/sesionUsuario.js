@@ -1,14 +1,6 @@
-//Vivienne Westwood Nana's Collection
-import { Usuario } from './classes/Usuario.js';
+import {Usuario} from './classes/Usuario.js'
 
-//Arrays
 let usuarios = [];
-let productos = [];
-let carrito = [];
-
-let array = [];
-let u = {};
-
 let sesionIniciada = '';
 
 let input0;
@@ -48,13 +40,6 @@ function valorIsDefine(variable){
 function registrarUsuario(nombre,  mail, password){
     u =  new Usuario(nombre, mail, password);
 }
-
-/*  ------------------------------ funciones con DOM ------------------------------*/
-
-//Comprueba si hay algo en ls de Usuarios
-comprobarEstadoDeLocalSUsuarios();
-console.log(sesionIniciada)
-comprobarSesion();
 
 
 //Abrir modal form, por defecto inicia en form de registro
@@ -295,4 +280,9 @@ sesionUsuario.addEventListener('click', ()=>{
     ocultarSesion();
 }); 
 
+
+//Comprueba si hay algo en ls de Usuarios
+comprobarEstadoDeLocalSUsuarios();
+console.log(sesionIniciada)
+comprobarSesion();
 usuarioEnSesion(sesionIniciada);

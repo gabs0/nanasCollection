@@ -99,7 +99,7 @@ const cargarProductos = async ()=>{
 //Función para mostrar la carga y luego los productos
 function simularCargaProductos(){
     let divCarga = document.getElementById("loader");
-    divCarga.innerHTML=`<img src="../assets/icons/loader.svg" alt="">
+    divCarga.innerHTML=`<i class="fi fi-rr-rotate-right"></i>
                         <p>Los productos están cargando</p>`
     setTimeout(()=>{
         divCarga.remove();
@@ -293,7 +293,7 @@ function cargarItemsEnCarrito(array){
                                             <p>${itemComprado.cantidad} unidades</p>
                                             <p>Subtotal $ ${itemComprado.subtotal}</p>
                                         </div>
-                                        <button id="btnEliminar${itemComprado.id}"  class="btn--eliminarItem"><img src="../assets/icons/trash-2.svg" alt="trash-2"></button>
+                                        <button id="btnEliminar${itemComprado.id}"  class="btn--eliminarItem"><i class="fi fi-rr-trash"></i></button>
                                     </div>`
 
         //Evento para eliminar un item del carrito
@@ -359,6 +359,8 @@ const filtroLentes = document.getElementById("lentes");
 const filtroEncendedor = document.getElementById("encendedor");
 const filtroAnillo = document.getElementById("anillo");
 const filtroPua = document.getElementById("pua");
+const filtroTodo = document.getElementById("mostrarTodo");
+
 
 let contador = 0;
 
@@ -495,6 +497,11 @@ filtroPua.addEventListener('click',()=>{
             divProductos.innerHTML= `<p>No se encontraron productos</p>`;
         }
     })
+})
+
+filtroTodo.addEventListener('click', ()=>{
+    divProductos.innerHTML= ``;
+    cargarProductos()
 })
 
 

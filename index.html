@@ -8,6 +8,11 @@
     <!-- Libreria de Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+    <!-- iconos -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    
+
     <!-- Archivo de estilos -->
     <link rel="stylesheet" href="./css/styles.css">
 
@@ -29,7 +34,6 @@
                 <li><a href="#seccionAcercaDe" id="aboutUs">acerca de</a></li>
                 <li><a href="#logUser" id="logUser">registrarse</a></li>
                 <li><a href="#sesion" id="sesion">cerrar sesión</a></li>
-                <li><a href=""><img class="carrito--vacio" src="./assets/icons/shopping-cart.svg" alt="carrito"></a></li>
             </ul>
         </nav>
     </header>
@@ -37,13 +41,13 @@
     <section id="formModal" class="modal ">
         <div class="container--modal">
             <a href="#" id="closeModal" class="modal--close">
-                <img src="./assets/icons/x.svg" alt="cerrar">
+                <i class="fi fi-rr-cross-small"></i>
             </a>
             <form id="formUserSignUp">
                 <h3>Registrarse</h3>
                 <div class="div__input">
                     <label class='logo' for="nombre">
-                        <img src="./assets/icons/user.svg" alt="user icon">
+                        <i class="fi fi-sr-user"></i>
                     </label>
                     <input type="text"  name="nombre" id="nombreUsuario"  placeholder="Ingrese nombre completo">
                     <small class="aviso"></small>
@@ -51,7 +55,7 @@
 
                 <div class="div__input">
                     <label class='logo' for="correo">
-                        <img src="./assets/icons/at-sign.svg" alt="mail icon">
+                        <i class="fi fi-sr-at"></i>
                     </label>
                     <input type="email" name="correo" id="mailUsuario"  placeholder="Ingrese correo electrónico" >
                     <small class="aviso"></small>
@@ -59,7 +63,7 @@
 
                 <div class="div__input">
                     <label class='logo' for="passw">
-                        <img src="./assets/icons/lock.svg" alt="password icon">
+                        <i class="fi fi-rr-lock"></i>
                     </label>
                     <input type="password" name="passw" id="passwordUsuario" placeholder="Ingrese contraseña">
                     <small class="aviso"></small>
@@ -76,7 +80,7 @@
                 <h3>Iniciar sesión</h3>
                 <div class="div__input">
                     <label class='logo' for="correo">
-                        <img src="./assets/icons/at-sign.svg" alt="mail icon">
+                        <i class="fi fi-sr-at"></i>
                     </label>
                     <input type="email" name="correo" id="mailUsuarioLogIn"  placeholder="Ingrese correo electrónico" >
                     <small class="aviso"></small>
@@ -84,7 +88,7 @@
     
                 <div class="div__input">
                     <label class='logo' for="passw">
-                        <img src="./assets/icons/lock.svg" alt="password icon">
+                        <i class="fi fi-rr-lock"></i>
                     </label>
                     <input type="password" name="passw" id="passwordUsuarioLogIn" placeholder="Ingrese contraseña">
                     <small class="aviso"></small>
@@ -106,29 +110,74 @@
             </h1>
         </div>
         <div class="galeria">
-            <img src="./assets/home.jpg" alt="">
+            <div class="slide" id="slideContenedor">
+                <img class="slide__img" id="0" src="./assets/slider_home/home.jpg" alt="">
+            </div>
+            <!-- botones de slide -->
+            <div id="btnPrev" class="slider_btn slider_btn--prev"><i class="fi fi-rr-angle-left"></i></div>
+            <div id="btnNext" class="slider_btn slider_btn--next"><i class="fi fi-rr-angle-right"></i></div>
         </div>
     </section>
 
     <section class="section--home" id="seccionColeccion">
         <div class="section__div__titulo" ">
             <h1>
-                Nana's Collection
+                Personajes: Nana
             </h1>
         </div>
+
         <div class="galeria">
-            <img src="./assets/nanasCollection.jpeg" alt="">
+            <div id="cardPersonajes" class="sliderCards">
+                <div class="card">
+                    <img src="./assets/nana.jpg" alt="" class="insp">
+                    <p>Nana Ōsaki</p>
+                    <small>Vocalista y compositora de Black Stones <br>Habitación 707</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/hachiko.jpg" alt="" class="insp">
+                    <p>Nana Komatsu</p>
+                    <small>Compañera de piso <br>Habitación 707</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/ren.jpg" alt="" class="insp">
+                    <p>Ren Honjō</p>
+                    <small>Guitarrista de Trapnest <br>Prometido de Nana Ōsaki</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/nobu.jpg" alt="" class="insp">
+                    <p>Nobuo Terashima</p>
+                    <small>Guitarrista y compositor de Black Stones</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/yasu.jpg" alt="" class="insp">
+                    <p>Yasushi Takagi</p>
+                    <small>Baterista de Black Stones</small>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/shin.jpg" alt="" class="insp">
+                    <p>Shinichi Okazaki</p>
+                    <small>Bajista de Black Stones</small>
+                </div>
+            </div>
         </div>
+        
+        <!-- botones de slide -->
+        <button id="btnRetroceder" class="cards__btn--retroceder"><i class="fi fi-rr-angle-left"></i></button>
+        <button id="btnAvanzar" class="cards__btn--avanzar"><i class="fi fi-rr-angle-right"></i></button>
+
     </section>
 
     <section class="section--about" id="seccionAcercaDe">
         <div class="section__div__titulo">
-            <h1>
-                About us
-            </h1>
+            <h1>Acerca de nosotros</h1>
         </div>
-        <div class="galeria">
-            <img src="./assets/about.jpg" alt="">
+        <div class="info">
+            <p><strong>Nana's Collection</strong> es un colección de moda inspirada en la selección de Vivienne Westwood, ícono del movimiento punk, quien dió pie a una magnífica colección utilizada por diferentes figuras del momento. <br> Nuestra colección parte de <strong>Ai Yazawa</strong> quien diseñó los personajes del manga <strong>Nana</strong>, nuestra protagonista viste tales prendas seleccionadas no solo en sus conciertos de Black Stone, sino en su día a día logrando expresar su identidad.</p>
         </div>
     </section>
 
@@ -140,7 +189,7 @@
     </footer>
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="./js/main.js" type="module"></script>
-
+    <script src="./js/sesionUsuario.js" type="module"></script>
+    <script src="./js/inicio.js" type="module"></script>
 </body>
 </html>

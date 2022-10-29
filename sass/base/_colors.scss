@@ -36,6 +36,7 @@ $color19:#C0D1F1;
 /*extras*/
 $color20:#7419B0;
 $color21:#A62349;
+$color22: #bebebe2c;
 
 //map
 $colors:(
@@ -61,7 +62,13 @@ $colors:(
     "color19":$color19,
     "color20":$color20,
     "color21":$color21,
+    "color22": $color22,
 );
+
+
+body{
+    background-color:map-get($colors, "color22" );
+}
 
 h1, h2, small{
     color: map-get($colors, "color0" );
@@ -70,3 +77,4 @@ h1, h2, small{
 nav a{
     color: map-get($colors, "color1" );
 }
+
